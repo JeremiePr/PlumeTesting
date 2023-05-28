@@ -32,7 +32,7 @@ npm i @jeje-devs/plume-testing
 Simply run
 
 ```
-import { runTests, theArray } from '@jeje-devs/plume-testing';
+import { runTests, theArray, theNumber, theBoolean } from '@jeje-devs/plume-testing';
 
 runTests({
 
@@ -49,6 +49,12 @@ runTests({
         theNumber(9.81).shouldNotBe(10);
     },
 
+    'BooleanShould': () =>
+    {
+        // This test will fail
+        theBoolean(false).shouldBeTrue();
+    }
+
     // All remaining tests
 
 });
@@ -60,10 +66,11 @@ This method will log the test results:
 ==================================================
 
 Tests succeeded: 2
-Tests failed: 0
+Tests failed: 1
 
 TESTS FAILED:
 
+BooleanShould:   Assert failed. Actual boolean 'false' should be true
 
 TESTS SUCCEEDED:
 

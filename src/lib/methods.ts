@@ -14,9 +14,9 @@ export const theObject = <T extends Object>(actual: T) => ({
 
     shouldNotBe: (notExpected: T) => assert(() => actual !== notExpected, `Actual object '${actual}' should not be equal to '${notExpected}'`),
 
-    shouldBeNil: () => assert(() => actual == null, `Actual object '${actual}' should be null or undefined`),
+    shouldBeNil: () => assert(() => actual == null, `Actual object '${actual}' should be 'null' or 'undefined'`),
 
-    shouldNotBeNil: () => assert(() => actual != null, `Actual object '${actual}' should not be null nor undefined`),
+    shouldNotBeNil: () => assert(() => actual != null, `Actual object '${actual}' should not be 'null' nor 'undefined'`),
 
     shouldHavePropertyCheckingPredicateWith: (expected: T, predicate: (actualItem: T, expectedItem: T) => boolean) => assert(() => predicate(actual, expected), `Actual object should match predicate with expected object`),
 
@@ -126,9 +126,9 @@ export const theBoolean = (actual: boolean) => ({
 
     shouldBe: (expected: boolean) => assert(() => actual === expected, `Actual boolean '${actual}' should be equal to expected boolean '${expected}'`),
 
-    shouldBeTrue: () => assert(() => actual === true, `Actual boolean '${actual}' should be true`),
+    shouldBeTrue: () => assert(() => actual === true, `Actual boolean '${actual}' should be 'true'`),
 
-    shouldBeFalse: () => assert(() => actual === false, `Actual boolean '${actual}' should be false`),
+    shouldBeFalse: () => assert(() => actual === false, `Actual boolean '${actual}' should be 'false'`),
 
     shouldNotBe: (notExpected: boolean) => assert(() => actual !== notExpected, `Actual boolean '${actual}' should not be equal to '${notExpected}'`),
 
