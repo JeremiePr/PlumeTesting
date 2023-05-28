@@ -7,6 +7,7 @@
 * [Setup](#setup)
 * [Usage](#usage)
 * [Contributors](#contributors)
+* [Links](#links)
 
 ## General info
 
@@ -22,7 +23,9 @@ The purpose was to make it as lightweight as possible
 
 ## Setup
 
-On its way...
+```
+npm i @jeje-devs/plume-testing
+```
 
 ## Usage
 
@@ -79,3 +82,7 @@ The different testing methods are:
 ## Contributors
 
 - [Jérémie Primas](https://github.com/JeremiePr)
+
+## Links
+
+- [npm](https://www.npmjs.com/package/@jeje-devs/plume-testing)
