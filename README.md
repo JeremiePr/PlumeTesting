@@ -51,10 +51,26 @@ runTests({
 
     // All remaining tests
 
-})
+});
 ```
 
 This method will log the test results.
+
+You can also run tests asynchronously:
+
+```
+runTests({
+
+    'SomethingShould': async () =>
+    {
+        const actual = await giveMeANumberAsynchronously();
+
+        theObject(actual).shouldNotBeNil();
+        theNumber(actual).shouldBe(123);
+    }
+
+});
+```
 
 If you don't want to display the results but storing them to a variable, just use the method **getTestsResults**
 
