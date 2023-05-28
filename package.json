@@ -1,0 +1,16 @@
+{
+    "name": "@jeje-devs/plume-testing",
+    "version": "1.0.0",
+    "description": "Very lightweight package for basic testing",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": ["/dist"],
+    "author": "jeje-devs",
+    "license": "ISC",
+    "dependencies": {},
+    "scripts": {
+        "build": "tsc",
+        "test": "tsc && node ./dist/test.js",
+        "publish": "rmdir /s /q \"./dist\" && tsc --sourceMap false && npm pack"
+    }
+}
