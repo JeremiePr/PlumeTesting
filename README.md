@@ -39,7 +39,8 @@ runTests({
     'ArrayShould': () =>
     {
         theArray(['foo', 'bar', 'baz']).shouldHaveLength(3);
-        theArray([{ name: 'Foo' }, { name: 'Bar' }, { name: 'Baz' }]).shouldVerify(array => array.length === 3 && array[1].name === 'Bar');
+        theArray([{ name: 'Foo' }, { name: 'Bar' }, { name: 'Baz' }])
+            .shouldVerify(array => array.length === 3 && array[1].name === 'Bar');
     },
 
     'NumberShould': () =>

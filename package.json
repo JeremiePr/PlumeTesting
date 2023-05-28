@@ -1,6 +1,6 @@
 {
     "name": "@jeje-devs/plume-testing",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Very lightweight package for basic testing",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
