@@ -11,10 +11,10 @@
 
 ## General info
 
-PlumeTesting is a very light testing library
+PlumeTesting is a very light testing library.
 
-I was bored so I wanted to create a very easy to use test library in Node.js
-The purpose was to make it as lightweight as possible
+I was bored so I wanted to create a very easy to use test library in Node.js.
+The purpose was to make it as lightweight as possible.
 
 ## Technologies
 
@@ -96,7 +96,7 @@ runTests({
 });
 ```
 
-If you don't want to display the results but storing them to a variable, just use the method **getTestsResults**
+If you don't want to display the results but storing them to a variable, just use the method **getTestsResults**:
 
 ```
 import { getTestsResults, theObject } from '@jeje-devs/plume-testing';
