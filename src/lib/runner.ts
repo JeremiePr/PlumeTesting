@@ -1,4 +1,4 @@
-import { logError, logInfo, logSuccess } from './helpers';
+import { logError, logInfo, logNote, logSuccess } from './helpers';
 import { TestEntrySet, TestResult } from './types'
 
 export const getTestsResults = async (tests: TestEntrySet): Promise<Array<TestResult>> =>
@@ -36,20 +36,24 @@ export const runTests = async (tests: TestEntrySet): Promise<void> =>
     const successes = results.filter(x => x.status === 'success');
     const fails = results.filter(x => x.status === 'fail');
 
-    console.log('\n');
-    logInfo('==================================================');
-    console.log();
+    logInfo('\n==================================================\n');
+
     logSuccess(`Tests succeeded: ${successes.length}`);
-    logError(`Tests failed: ${fails.length}`);
-    console.log();
-    logInfo('TESTS FAILED:');
-    console.log();
-    fails.forEach(test => logError(`${test.testName}:   ${test.message ?? 'No message'}`));
-    console.log();
-    logInfo('TESTS SUCCEEDED:');
-    console.log();
-    successes.forEach(test => logSuccess(`${test.testName}`));
-    console.log();
-    logInfo('==================================================');
-    console.log('\n');
+    logError(`Tests failed: ${fails.length}\n`);
+
+    logInfo('TESTS FAILED:\n');
+
+    if (fails.length > 0)
+        fails.forEach(test => logError(`${test.testName}:   ${test.message ?? 'No message'}`));
+    else
+        logNote('No result');
+
+    logInfo('\nTESTS SUCCEEDED:\n');
+
+    if (successes.length > 0)
+        successes.forEach(test => logSuccess(`${test.testName}`));
+    else
+        logNote('No result');
+
+    logInfo('\n==================================================\n');
 }
