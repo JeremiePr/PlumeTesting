@@ -1,5 +1,5 @@
 import { assert, theArray, theBoolean, theDate, theNumber, theObject, theString } from './lib/methods';
-import { getTestsResults, runTests } from './lib/runner';
+import { getTestsResults } from './lib/runner';
 
 const resultsPromise = getTestsResults({
 
