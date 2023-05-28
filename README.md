@@ -70,7 +70,7 @@ Tests failed: 1
 
 TESTS FAILED:
 
-BooleanShould:   Assert failed. Actual boolean 'false' should be true
+BooleanShould:   Assert failed. Actual boolean 'false' should be 'true'
 
 TESTS SUCCEEDED:
 
