@@ -86,3 +86,4 @@ The different testing methods are:
 ## Links
 
 - [npm](https://www.npmjs.com/package/@jeje-devs/plume-testing)
+- [GitHub](https://github.com/JeremiePr/PlumeTesting)
