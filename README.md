@@ -54,7 +54,24 @@ runTests({
 });
 ```
 
-This method will log the test results.
+This method will log the test results:
+
+```
+==================================================
+
+Tests succeeded: 2
+Tests failed: 0
+
+TESTS FAILED:
+
+
+TESTS SUCCEEDED:
+
+ArrayShould
+NumberShould
+
+==================================================
+```
 
 You can also run tests asynchronously:
 
