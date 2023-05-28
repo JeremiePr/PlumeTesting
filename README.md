@@ -46,7 +46,7 @@ runTests({
     'NumberShould': () =>
     {
         theNumber(15.15).shouldBe(15.15);
-        theNumber(10).shouldNotBe(9.81);
+        theNumber(9.81).shouldNotBe(10);
     },
 
     // All remaining tests
