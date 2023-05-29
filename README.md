@@ -31,7 +31,7 @@ npm i @jeje-devs/plume-testing
 
 Simply run
 
-```
+```ts
 import { runTests, theArray, theNumber, theBoolean } from '@jeje-devs/plume-testing';
 
 runTests({
@@ -82,7 +82,7 @@ NumberShould
 
 You can also run tests asynchronously:
 
-```
+```ts
 runTests({
 
     'SomethingShould': async () =>
@@ -98,7 +98,7 @@ runTests({
 
 If you don't want to display the results but storing them to a variable, just use the method **getTestsResults**:
 
-```
+```ts
 import { getTestsResults, theObject } from '@jeje-devs/plume-testing';
 
 const results = await getTestsResults({
