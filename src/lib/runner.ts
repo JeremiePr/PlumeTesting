@@ -3,8 +3,8 @@ import { TestEntrySet, TestResult } from './types'
 
 export const getTestsResults = async (
     tests: TestEntrySet,
-    initialize?: () => Promise<any>,
-    terminate?: (params: any) => Promise<void>): Promise<Array<TestResult>> =>
+    initialize?: () => Promise<any> | any,
+    terminate?: (params: any) => Promise<void> | void): Promise<Array<TestResult>> =>
 {
     const results: Array<TestResult> = [];
 
@@ -36,9 +36,12 @@ export const getTestsResults = async (
     return results;
 }
 
-export const runTests = async (tests: TestEntrySet): Promise<void> =>
+export const runTests = async (
+    tests: TestEntrySet,
+    initialize?: () => Promise<any>,
+    terminate?: (params: any) => Promise<void>): Promise<void> =>
 {
-    const results = await getTestsResults(tests);
+    const results = await getTestsResults(tests, initialize, terminate);
 
     const successes = results.filter(x => x.status === 'success');
     const fails = results.filter(x => x.status === 'fail');

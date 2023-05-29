@@ -120,6 +120,39 @@ The different testing methods are:
 - theNumber
 - theBoolean
 
+### Tests lifecycle
+
+You can also pass 2 optional methods for the tests:
+* **initialize**: If you need something to run before the tests and also store variables during the whole testing lifecycle, you can use this method
+* **terminate**: If you need to call stuff after the tests have run, you can call this method
+
+Examples:
+```ts
+function initialize()
+{
+    // Tests initialization
+    return { message: 'Hello World!' };
+}
+
+function terminate(params: { message: string; })
+{
+    // Tests termination
+}
+
+runTests({
+
+    // We can also access the parameters inside test methods
+    'SomethingShould': async params =>
+    {
+        const actual = await giveMeANumberAsynchronously();
+
+        theObject(actual).shouldNotBeNil();
+        theNumber(actual).shouldBe(123);
+    }
+
+}, initialize, terminate);
+```
+
 ## Contributors
 
 - [Jérémie Primas](https://github.com/JeremiePr)
