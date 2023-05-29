@@ -12,9 +12,7 @@
 ## General info
 
 PlumeTesting is a very light testing library.
-
-I was bored so I wanted to create a very easy to use test library in Node.js.
-The purpose was to make it as lightweight as possible.
+The purpose is to run test a very minimal way.
 
 ## Technologies
 
