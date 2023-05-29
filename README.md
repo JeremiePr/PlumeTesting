@@ -34,7 +34,7 @@ Simply run
 ```ts
 import { runTests, theArray, theNumber, theBoolean } from '@jeje-devs/plume-testing';
 
-runTests({
+runTests<void>({
 
     'ArrayShould': () =>
     {
@@ -83,7 +83,7 @@ NumberShould
 You can also run tests asynchronously:
 
 ```ts
-runTests({
+runTests<void>({
 
     'SomethingShould': async () =>
     {
@@ -101,7 +101,7 @@ If you don't want to display the results but storing them to a variable, just us
 ```ts
 import { getTestsResults, theObject } from '@jeje-devs/plume-testing';
 
-const results = await getTestsResults({
+const results = await getTestsResults<void>({
 
     'SomeTest': () =>
     {
@@ -128,18 +128,23 @@ You can also pass 2 optional methods for the tests:
 
 Example:
 ```ts
-function initialize()
+interface TestParams
+{
+    message: string;
+}
+
+function initialize(): TestParams
 {
     // Tests initialization
     return { message: 'Hello World!' };
 }
 
-function terminate(params: { message: string; })
+function terminate(params: TestParams)
 {
     // Tests termination
 }
 
-runTests({
+runTests<TestParams>({
 
     // We can also access the parameters inside test methods
     'SomethingShould': async params =>
