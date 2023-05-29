@@ -126,7 +126,7 @@ You can also pass 2 optional methods for the tests:
 * **initialize**: If you need something to run before the tests and also store variables during the whole testing lifecycle, you can use this method
 * **terminate**: If you need to call stuff after the tests have run, you can call this method
 
-Examples:
+Example:
 ```ts
 function initialize()
 {
