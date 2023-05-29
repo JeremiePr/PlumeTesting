@@ -1,6 +1,6 @@
-export type TestMethod = (params: any) => (void | Promise<void>);
+export type TestMethod<T> = (params: T | null) => (void | Promise<void>);
 
-export type TestEntrySet = { [testName: string]: TestMethod };
+export type TestEntrySet<T> = { [testName: string]: TestMethod<T> };
 
 export type TestResultStatus = 'success' | 'fail';
 

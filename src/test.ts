@@ -1,7 +1,7 @@
 import { assert, theArray, theBoolean, theDate, theNumber, theObject, theString } from './lib/methods';
 import { getTestsResults } from './lib/runner';
 
-const resultsPromise = getTestsResults({
+const resultsPromise = getTestsResults<void>({
 
     'SomeObjectsShouldSucceed': () =>
     {

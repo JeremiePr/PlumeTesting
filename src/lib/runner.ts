@@ -1,14 +1,14 @@
 import { logError, logInfo, logNote, logSuccess } from './helpers';
 import { TestEntrySet, TestResult } from './types'
 
-export const getTestsResults = async (
-    tests: TestEntrySet,
-    initialize?: () => Promise<any> | any,
-    terminate?: (params: any) => Promise<void> | void): Promise<Array<TestResult>> =>
+export const getTestsResults = async <T>(
+    tests: TestEntrySet<T>,
+    initialize?: () => Promise<T> | T,
+    terminate?: (params: T | null) => Promise<void> | void): Promise<Array<TestResult>> =>
 {
     const results: Array<TestResult> = [];
 
-    const params: any = initialize ? await initialize() : null;
+    const params: T | null = initialize ? await initialize() : null;
 
     for (const testName of Object.keys(tests))
     {
@@ -36,10 +36,10 @@ export const getTestsResults = async (
     return results;
 }
 
-export const runTests = async (
-    tests: TestEntrySet,
-    initialize?: () => Promise<any>,
-    terminate?: (params: any) => Promise<void>): Promise<void> =>
+export const runTests = async <T>(
+    tests: TestEntrySet<T>,
+    initialize?: () => Promise<T> | T,
+    terminate?: (params: T | null) => Promise<void> | void): Promise<void> =>
 {
     const results = await getTestsResults(tests, initialize, terminate);
 
