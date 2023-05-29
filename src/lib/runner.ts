@@ -1,15 +1,20 @@
 import { logError, logInfo, logNote, logSuccess } from './helpers';
 import { TestEntrySet, TestResult } from './types'
 
-export const getTestsResults = async (tests: TestEntrySet): Promise<Array<TestResult>> =>
+export const getTestsResults = async (
+    tests: TestEntrySet,
+    initialize?: () => Promise<any>,
+    terminate?: (params: any) => Promise<void>): Promise<Array<TestResult>> =>
 {
     const results: Array<TestResult> = [];
+
+    const params: any = initialize ? await initialize() : null;
 
     for (const testName of Object.keys(tests))
     {
         try
         {
-            await tests[testName]();
+            await tests[testName](params);
             results.push({
                 testName,
                 status: 'success',
@@ -25,6 +30,8 @@ export const getTestsResults = async (tests: TestEntrySet): Promise<Array<TestRe
             });
         }
     }
+
+    if (terminate) await terminate(params);
 
     return results;
 }

@@ -1,4 +1,4 @@
-export type TestMethod = () => (void | Promise<void>);
+export type TestMethod = (params: any) => (void | Promise<void>);
 
 export type TestEntrySet = { [testName: string]: TestMethod };
 
