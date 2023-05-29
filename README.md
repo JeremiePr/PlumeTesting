@@ -24,7 +24,7 @@ The purpose was to make it as lightweight as possible.
 ## Setup
 
 ```
-npm i @jeje-devs/plume-testing
+npm install @jeje-devs/plume-testing
 ```
 
 ## Usage
