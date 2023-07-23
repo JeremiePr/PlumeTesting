@@ -137,7 +137,7 @@ function initialize(): TestParams
     return { message: 'Hello World!' };
 }
 
-function terminate(params: TestParams)
+function terminate(params: TestParams): void
 {
     // Tests termination
 }
